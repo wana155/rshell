@@ -13,6 +13,7 @@ using namespace std;
 
 CommandExecute::CommandExecute(){
     this->executeFunction= new CoShellFactory();/*by defaoult*/
+     this->status=true;
 }
 CommandExecute::CommandExecute(BaseFactory*Factory){
     this->executeFunction = Factory;

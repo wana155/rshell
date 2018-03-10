@@ -21,7 +21,7 @@ protected:
      bool run(char **a);
     std::vector <std::string> commads;
     std::vector <char> connector;
-    bool status=true;   
+    bool status;   
  BaseFactory* executeFunction;
     
 };

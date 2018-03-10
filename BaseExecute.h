@@ -24,7 +24,7 @@ protected:
     string str;
     char *tmp[50];
     
-public: BaseExecute(){}
+public: BaseExecute();
     virtual void ExecuteC()=0;
     bool runs(char **a);
     void ComadsEx(int i);

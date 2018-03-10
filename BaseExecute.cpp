@@ -4,6 +4,11 @@
 #include "BaseExecute.h"
 
 
+BaseExecute::BaseExecute(){
+    this->stas=true;
+}
+
+
 bool BaseExecute::runs(char **a){
     
         /* Forks parent and child processes for execution */
