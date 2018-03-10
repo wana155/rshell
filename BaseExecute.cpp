@@ -53,9 +53,11 @@ void BaseExecute::ComadsEx(int i){
     
 }
 void CoShellExecute::ExecuteC(){
-    tmp[0]="sh";
-    tmp[1]="-c";
-    /* Executes comands in conatiner*/
+    char b[]="sh";
+       tmp[0]=b;
+       char c[]="-c";
+        tmp[1]=c;    
+/* Executes comands in conatiner*/
     for (int l=0;l<this->comma.size();l++){
         this->ComadsEx(l);
         }
@@ -64,9 +66,11 @@ void CoShellExecute::ExecuteC(){
 
 void TestExecute::ExecuteC(){
 
-  
-    tmp[0]="sh";
-    tmp[1]="-c";
+     char b[]="sh";
+       tmp[0]=b;
+       char c[]="-c";
+        tmp[1]=c; 
+    
     /* Executes comands in conatiner*/
     for (int l=0;l<this->comma.size();l++){
         

@@ -18,7 +18,7 @@ using namespace std;
 class BaseExecute{
 protected:
     vector <string> comma;
-    bool stas=true;
+    bool stas;
     vector <char> connec;
     
     string str;

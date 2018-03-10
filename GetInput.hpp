@@ -11,7 +11,6 @@ class GetInput{
   
 private:
     std::string in;
-    bool isTest=false;
 
 public:
    void getData();
