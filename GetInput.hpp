@@ -14,7 +14,7 @@ private:
 
 public:
    void getData();
-    std::string retrieveData(bool * a);
+    std::string retrieveData(bool*a,bool*b);
      std::string retrieveData();
     
 };
