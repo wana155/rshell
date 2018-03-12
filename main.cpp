@@ -1,5 +1,9 @@
 
 
+
+
+
+
 #include <iostream>
 #include "GetInput.hpp"
 #include <unistd.h>
@@ -11,17 +15,12 @@
 #include <sys/stat.h>
 #include "BaseFactory.h"
 #include "CommandExecute.hpp"
-
+#include <fcntl.h>
+#include "Redirection.h"
 using namespace std;
 
-bool fileExists(const std::string& file) {
-    struct stat buf;
-    return (stat(file.c_str(), &buf) == 0);
-}
-
 int main() {
-
-    cout<<"Type 'Exit' to End Program"<<endl;
+cout<<"Type 'Exit' to End Program"<<endl;
    
    BaseFactory* commandType1=new CoShellFactory();
    BaseFactory* commandType2=new TestFactory();
@@ -31,11 +30,21 @@ int main() {
  do{
     cout<<"$ ";
     test.getData();
-     bool T=false;
-   if(test.retrieveData(&T) =="Exit"){
+     
+     bool TezT=false;
+     bool Redir=false;
+     
+   if(test.retrieveData(&TezT,&Redir) =="Exit"){
       return 0;
    }
-   else if (T==true){
+   else if (Redir==true){
+       Redirection * instance=new Redirection();
+       instance->parse(test.retrieveData());
+       instance->Rexecute();
+       
+       
+   }
+   else if (TezT==true){
            CommandExecute *instance=new Command(commandType2);
             instance->parse(test.retrieveData());
            instance->execute();
@@ -51,3 +60,4 @@ int main() {
   }while(test.retrieveData() != "Exit");
 
 }
+
