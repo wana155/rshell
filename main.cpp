@@ -17,9 +17,14 @@
 #include "CommandExecute.hpp"
 #include <fcntl.h>
 #include "Redirection.h"
+#include <sstream>
+
+
 using namespace std;
 
 int main() {
+
+
 cout<<"Type 'Exit' to End Program"<<endl;
    
    BaseFactory* commandType1=new CoShellFactory();

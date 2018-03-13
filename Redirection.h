@@ -9,7 +9,8 @@ class Redirection: public Command{
 public: Redirection():Command(){}
     void Rexecute();
 private:
-    void clean(char *tx,long siz);
+    void clean(string &ins);
+    CommandExecute * Data;
 };
 
 #endif /* Redirection_h */
