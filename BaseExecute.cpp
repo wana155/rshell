@@ -2,28 +2,28 @@
 
 #include <stdio.h>
 #include "BaseExecute.h"
+#include <sstream>
+#include <fcntl.h>
+
 
 
 BaseExecute::BaseExecute(){
     this->stas=true;
 }
-
-
 bool BaseExecute::runs(char **a){
-    
+
         /* Forks parent and child processes for execution */
         bool tmp=true;
         pid_t  pid;
         int    status;
         if ((pid = fork()) < 0) {     /* Start fork and child  */
-            cout<<"* Unable to create fork child process"<<endl;
-        }
-        
+            cout<<"* Unable to create fork child process"<<endl;}
         else if (pid == 0) {
+            
             if (execvp("/bin/sh", a) < 0) {     /* execute the command  */
                 cout<<"* unable to execute commnad"<<endl;
-                tmp=false;
-            }}
+                tmp=false;}}
+ 
         else {
             while (wait(&status) != pid);}
         return tmp;
@@ -95,7 +95,7 @@ void TestExecute::ExecuteC(){
                 tmo.erase(0,(foundSy+2));
                 
             }
-        bool staa=true;
+        /*bool staa=true;*/
             if (tmo[1]==101){
                 tmo.erase(0,3);
                 
