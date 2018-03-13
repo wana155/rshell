@@ -75,29 +75,21 @@ void Redirection::Rexecute(){
 /*=================To Screen==================*/
         else   if (foundSy!=std::string::npos){
             
-       /*     string Comand = tmo.substr(0, foundSy);
+    
+        
+string Comand = tmo.substr(0, foundSy);
             string outFile= tmo.substr(foundSy+1);
             
             this->clean(Comand);
             this->clean(outFile);
-            
-            string txt;
-            string Ftxt;
-            ifstream file(outFile);
-            
-            if (file.is_open()){
-                while (file.good())
-                {
-                    getline(file, txt);
-                    Ftxt=Ftxt+txt;}
-                int stdOut= dup(1);
-                write(stdOut,Ftxt.c_str(),(Ftxt.size()-1));
-            }
-            else{
-                cout <<"Unable to open/Find File: "<<outFile<<endl;
-            }
-            
-            
+           char buffer[5000]="";
+           
+           int ToScreen=dup(1);
+           int filD = open(outFile.c_str(),O_RDWR,0644);
+           
+           read(filD, buffer, 5000);
+           
+           write(ToScreen, buffer, 5000);
         }
         else   if (foundSy2!=std::string::npos){
             
@@ -114,7 +106,8 @@ void Redirection::Rexecute(){
             this->Data= new Command(commandType2);
             this->Data->parse(tmo);
             this->Data->execute();
-        }
+       }
         
     
-        */}}}
+        }}
+
