@@ -91,7 +91,7 @@ string Comand = tmo.substr(0, foundSy);
            
            write(ToScreen, buffer, 5000);
         }
-        else   if (foundSy2!=std::string::npos){
+        else if (foundSy2!=std::string::npos){
             
             string Comand = tmo.substr(foundSy2+1);
             string outFile= tmo.substr(0, foundSy2);
@@ -99,6 +99,20 @@ string Comand = tmo.substr(0, foundSy);
             this->clean(Comand);
             this->clean(outFile);
             
+		/* int filD = open(outFile.c_str(), O_RDWR);
+ *                 if (filD<0){
+ *                    int filD = open(outFile.c_str(),O_CREAT|O_RDWR|O_TRUNC,0644);
+ *                    dup2(filD, 1);}
+ *                 else{
+ *                     int filD = open(outFile.c_str(), O_APPEND, 0644);
+ *                     dup2(filD, 1);}
+ *                 //execute comand
+ *                 if (execvp("/bin/sh", tm) < 0) {
+ *                     cout<<"* unable to execute commnad"<<endl;
+ *                     tmp=false;}}
+ *                 else {while (wait(&status) != pid);}
+ *                 cout<<"Output redirected to file '"<<outFile<<"'"<<endl;
+ *             */
         }
         else {
               BaseFactory* commandType2=new TestFactory();
