@@ -1,5 +1,5 @@
-rshell: main.cpp Command.cpp CommandExecute.cpp GetInput.cpp BaseExecute.cpp Redirection.cpp
-	g++ -o rshell main.cpp Command.cpp CommandExecute.cpp GetInput.cpp BaseExecute.cpp Redirection.cpp -I.
+subsystem:
+	cd src && $(MAKE)
 	mkdir bin
-	cp rshell bin
+	cp src/rshell bin
 
