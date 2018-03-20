@@ -80,11 +80,11 @@ void TestExecute::ExecuteC(){
     for (int l=0;l<this->comma.size();l++){
         
         string tmo=this->comma[l];
+        std::size_t foundb=tmo.find("bash");
         std::size_t found=tmo.find("test");
         std::size_t foundSy=tmo.find("[");
         std::size_t foundSy2=tmo.find("]");
-        if (found!=std::string::npos||foundSy!=std::string::npos){
-            
+           if ((found!=std::string::npos||foundSy!=std::string::npos)&& foundb==std::string::npos){ 
             if (found!=std::string::npos){
                 tmo.erase(0, (found+5));}
             if (tmo[tmo.size()-1]==32){

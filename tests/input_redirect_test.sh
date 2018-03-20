@@ -1,7 +1,8 @@
 #!/bin/bash
 
 
-echo Tests for <
+
+echo "Tests for <"
 
 echo Hello From input redirection!>echo.txt
 
